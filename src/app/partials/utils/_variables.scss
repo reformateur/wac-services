@@ -1,0 +1,24 @@
+//body size
+$full: 100%;
+$full-height: 100vh;
+//colors hexadecimal
+$principal-blue-hexa: #0c66ab;
+$principal-green-hexa: #4eae32;
+$principal-orange-hexa: #e88009;
+$principal-black-hexa: #000;
+//color rgb
+$principal-blue-rgb: rgb(12, 102, 171);
+$principal-green-rgb: rgb(78, 174, 50);
+$principal-orange-rgb: rgb(232, 128, 9);
+$principal-black-rgb: rgb(0, 0, 0);
+$principal-transparent-cover: linear-gradient(90deg, rgba(25, 36, 50, .75) 0%, rgba(25, 36, 50, .75) 32%, rgba(25, 36, 50, .75) 100%);
+//text size
+$great-title-size: 4rem;
+$normal-text-size: 1rem;
+$description-text-size: 1.3rem;
+$little-text-size: 0.8rem;
+//text-police
+$principal-family: 'Poppins',
+sans-serif;
+//z-index
+$z-index-verystrong: 40;

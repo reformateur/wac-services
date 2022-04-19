@@ -1,0 +1,384 @@
+//imports
+@import "../partials/utils/variables";
+@import "../partials/utils/mixins";
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $principal-black-hexa;
+}
+
+//navbar
+.navbar {
+    height: 100px;
+    width: $full;
+    z-index: 35;
+    .d-flex {
+        img {
+            height: 100px;
+            cursor: pointer
+        }
+    }
+    .navbar-collapse {
+        @include centered-bloc;
+        a {
+            margin-right: 50px;
+            z-index: 20;
+        }
+    }
+    .navbar-brand {
+        font-size: $normal-text-size;
+        margin-top: 10px;
+        .menu-icon,
+        .menu-icon-close {
+            display: none;
+        }
+    }
+}
+
+.services-drop {
+    &:hover {
+        color: $principal-black-hexa;
+        background: $principal-orange-hexa;
+    }
+    .services-dropdown {
+        width: inherit;
+        height: auto;
+        position: absolute;
+        text-align: center;
+        margin-top: 5px;
+        margin-left: -32px;
+        padding: 10px;
+        display: none;
+        background: $principal-orange-hexa;
+        p {
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//mobile menu
+.mobile-menu-bloc {
+    width: $full;
+    height: $full-height;
+    background-color: $principal-orange-hexa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+    .row {
+        .col-12 {
+            width: $full;
+            position: fixed;
+            top: 38vh;
+            left: 20px;
+            h2,
+            h4 {
+                margin-bottom: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+        .hide-mobile-dropdown {
+            top: 15vh;
+            cursor: pointer;
+            display: none;
+        }
+        .mobile-dropdown {
+            display: none;
+        }
+    }
+}
+
+.couverture-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background: $principal-transparent-cover;
+    width: $full;
+    height: $full-height;
+    z-index: $z-index-verystrong;
+    @include centered-bloc;
+    display: none;
+    img {
+        height: 90vh;
+    }
+}
+
+//
+.container-bloc {
+    .row {
+        width: $full;
+        height: $full;
+        padding: 0;
+        margin: 0;
+        @include centered-bloc;
+    }
+}
+
+//
+.bloc {
+    height: auto;
+    width: 90%;
+    margin-top: 3vh;
+    padding: 10vh;
+    z-index: 10;
+    h1 {
+        font-size: $great-title-size;
+        font-weight: 700;
+    }
+    p {
+        font-weight: 300;
+        margin-top: 5vh;
+        font-size: $description-text-size;
+    }
+}
+
+.bloc--two {
+    height: auto;
+    margin-bottom: 10vh;
+    .row {
+        margin-top: 4vh;
+        .certificat-div {
+            height: 350px;
+            @include centered-bloc;
+            .row {
+                .certificat {
+                    height: $full;
+                    width: $full;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                    cursor: pointer;
+                    &:hover {
+                        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                    }
+                }
+                .certificat-name {
+                    width: $full;
+                    margin-top: 3vh;
+                    text-align: center;
+                }
+            }
+        }
+        .certificat-div--down {
+            margin-top: 13vh;
+        }
+    }
+}
+
+.letsTalk {
+    height: 250px;
+    padding-top: 75px;
+    background: $principal-orange-hexa;
+    text-align: center;
+    margin-top: 10vh;
+    p {
+        font-weight: 200;
+        font-size: $description-text-size;
+    }
+    h1 {
+        font-size: $great-title-size;
+    }
+}
+
+.copyright {
+    height: 350px;
+    color: white;
+    background-color: $principal-black-hexa;
+    .row {
+        height: $full;
+        width: $full;
+        @include centered-bloc;
+        .blc {
+            @include centered-bloc;
+            .row {
+                @include centered-bloc;
+                h1 {
+                    color: $principal-orange-hexa
+                }
+                p {
+                    line-height: 35px;
+                }
+            }
+        }
+        .right {
+            text-align: left;
+        }
+    }
+}
+
+
+/*/
+  FULL RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN
+/*/
+
+
+/*/
+  ORDINATEUR GRAND ECRAN À PARTIR DE 16 POUCES MINIMUM
+/*/
+
+@media only screen and (min-width: 1500px) {}
+
+
+/*/
+  ORDINATEUR DE PLUS DE 12.5 POUCES (LG)
+/*/
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    //navbar
+    .navbar {
+        .navbar-collapse {
+            a {
+                margin-right: 20px;
+            }
+        }
+    }
+    //
+    .bloc {
+        padding: 0;
+        margin-top: 10vh;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    .bloc--two {
+        margin-bottom: 20vh;
+        .row {
+            .certificat-name {
+                h3 {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    //
+    .bloc {
+        padding: 10vh;
+    }
+}
+
+
+/*/
+  TABLETTES DE 10.33 POUCES MAXIMUM (MEDIUM)
+/*/
+
+@media only screen and (max-width: 991px) {
+    //navbar
+    .navbar {
+        .navbar-collapse {
+            display: none;
+        }
+        .navbar-brand {
+            .number {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+                font-weight: 700;
+                border-bottom: 1px solid black;
+                &:hover {
+                    color: $principal-black-hexa;
+                }
+            }
+            .menu-icon-close {
+                display: none;
+            }
+        }
+    }
+    //
+    .bloc {
+        padding: 0;
+        margin-top: 10vh;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    .bloc--two {
+        margin-bottom: 0vh;
+        .row {
+            margin-top: 4vh;
+            .certificat-div {
+                height: $full;
+                @include centered-bloc;
+                .row {
+                    .certificat {
+                        height: $full;
+                        width: $full;
+                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                        cursor: pointer;
+                        &:hover {
+                            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                        }
+                    }
+                    .certificat-name {
+                        width: $full;
+                        margin-top: 3vh;
+                        text-align: center;
+                    }
+                }
+            }
+            .certificat-div--down {
+                margin-top: 0vh;
+            }
+        }
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .copyright {
+        height: 400px;
+        .row {
+            .blc {
+                .row {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*/
+  TABLETTES DE 8 POUCES MAXIMUM (SMALL)
+/*/
+
+@media only screen and (max-width: 767px) {}
+
+
+/*/
+  SMARTPHONES DE 6 POUCES MAXIMUM (EXTRA SMALL)
+/*/
+
+@media only screen and (max-width: 575px) {}

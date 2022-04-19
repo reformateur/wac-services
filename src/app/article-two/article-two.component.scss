@@ -1,0 +1,300 @@
+//imports
+@import "../partials/utils/variables";
+@import "../partials/utils/mixins";
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $principal-black-hexa;
+}
+
+//navbar
+.navbar {
+    height: 100px;
+    width: $full;
+    z-index: 35;
+    .d-flex {
+        img {
+            height: 100px;
+            cursor: pointer
+        }
+    }
+    .navbar-collapse {
+        @include centered-bloc;
+        a {
+            margin-right: 50px;
+            z-index: 20;
+        }
+    }
+    .navbar-brand {
+        font-size: $normal-text-size;
+        margin-top: 10px;
+        .menu-icon,
+        .menu-icon-close {
+            display: none;
+        }
+    }
+}
+
+.services-drop {
+    &:hover {
+        color: $principal-black-hexa;
+        background: $principal-orange-hexa;
+    }
+    .services-dropdown {
+        width: inherit;
+        height: auto;
+        position: absolute;
+        text-align: center;
+        margin-top: 5px;
+        margin-left: -32px;
+        padding: 10px;
+        display: none;
+        background: $principal-orange-hexa;
+        p {
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//mobile menu
+.mobile-menu-bloc {
+    width: $full;
+    height: $full-height;
+    background-color: $principal-orange-hexa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+    .row {
+        .col-12 {
+            width: $full;
+            position: fixed;
+            top: 38vh;
+            left: 20px;
+            h2,
+            h4 {
+                margin-bottom: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+        .hide-mobile-dropdown {
+            top: 15vh;
+            cursor: pointer;
+            display: none;
+        }
+        .mobile-dropdown {
+            display: none;
+        }
+    }
+}
+
+//
+.container-bloc {
+    height: $full;
+    width: $full;
+    .row {
+        width: $full;
+        height: $full;
+        padding: 0;
+        margin: 0;
+        @include centered-bloc;
+    }
+}
+
+//
+.bloc {
+    height: auto;
+    width: 80%;
+    padding: 10vh;
+    h1 {
+        font-weight: 500;
+        text-align: center;
+        font-size: $great-title-size;
+    }
+    p {
+        font-weight: 200;
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+        text-align: center;
+        font-size: $description-text-size;
+    }
+}
+
+.letsTalk {
+    height: 250px;
+    padding-top: 75px;
+    background: $principal-orange-hexa;
+    text-align: center;
+    margin-top: 60vh;
+    p {
+        font-weight: 200;
+        font-size: $description-text-size;
+    }
+    h1 {
+        font-size: $great-title-size;
+    }
+}
+
+.copyright {
+    height: 350px;
+    color: white;
+    background-color: $principal-black-hexa;
+    .row {
+        height: $full;
+        width: $full;
+        @include centered-bloc;
+        .blc {
+            @include centered-bloc;
+            .row {
+                @include centered-bloc;
+                h1 {
+                    color: $principal-orange-hexa
+                }
+                p {
+                    line-height: 35px;
+                }
+            }
+        }
+        .right {
+            text-align: left;
+        }
+    }
+}
+
+
+/*/
+  FULL RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN
+/*/
+
+
+/*/
+  ORDINATEUR GRAND ECRAN À PARTIR DE 16 POUCES MINIMUM
+/*/
+
+@media only screen and (min-width: 1500px) {}
+
+
+/*/
+  ORDINATEUR DE PLUS DE 12.5 POUCES (LG)
+/*/
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    //navbar
+    .navbar {
+        .navbar-collapse {
+            a {
+                margin-right: 20px;
+            }
+        }
+    }
+    //
+    .bloc {
+        padding: 0;
+        margin-top: 10vh;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    .letsTalk {
+        margin-top: 30vh;
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    //
+    .bloc {
+        padding: 10vh;
+    }
+}
+
+
+/*/
+  TABLETTES DE 10.33 POUCES MAXIMUM (MEDIUM)
+/*/
+
+@media only screen and (max-width: 991px) {
+    //navbar
+    .navbar {
+        .navbar-collapse {
+            display: none;
+        }
+        .navbar-brand {
+            .number {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+                font-weight: 700;
+                border-bottom: 1px solid black;
+                &:hover {
+                    color: $principal-black-hexa;
+                }
+            }
+            .menu-icon-close {
+                display: none;
+            }
+        }
+    }
+    //
+    .bloc {
+        padding: 0;
+        margin-top: 10vh;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    .letsTalk {
+        margin-top: 15vh;
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .copyright {
+        height: 400px;
+        .row {
+            .blc {
+                .row {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*/
+  TABLETTES DE 8 POUCES MAXIMUM (SMALL)
+/*/
+
+@media only screen and (max-width: 767px) {}
+
+
+/*/
+  SMARTPHONES DE 6 POUCES MAXIMUM (EXTRA SMALL)
+/*/
+
+@media only screen and (max-width: 575px) {}

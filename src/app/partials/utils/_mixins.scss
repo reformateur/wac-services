@@ -1,0 +1,56 @@
+//imports
+@import "../utils/variables";
+//centered a bloc
+@mixin centered-bloc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//defaut body's background
+@mixin background-image ($background) {
+    background-image: $background;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+//page coverage
+@mixin background-coverage ($coverage) {
+    background-image: $coverage;
+    background-size: 180%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+
+//buttom default
+@mixin button-default {
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//buttom focus
+@mixin button-focus {
+    border-color: #ced4da;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+//event illustration image
+@mixin event-image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+//landing page image
+@mixin landingImage-edit {
+    position: relative;
+    left: 10%;
+}

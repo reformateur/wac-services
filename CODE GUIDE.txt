@@ -1,0 +1,21 @@
+
+- HOME * 
+	. great title and text down (top)
+	. great title and certificat image down with text down (le text est le nom du certificat et le pays qui le delivre. le text est clicable et nous ramène news)
+	ps: 8 blocs de certificats
+	. great title and 4 down bloc with title and text description with view more ( view more est clicable et nous ramène à une page dédiée à l'explication )
+	ps: une image pour chacun des 4 blocs
+	. footer page bloc orange [ with it own text ] ; bloc noir [ 2 cols with their owns text ]
+
+- LATEST WORK *
+	. faire figurer les 8 blocs de certificats avec les même informations
+	. let's talk with it own text ( 2 cols )
+
+- ABOUT US *
+	. text and images
+
+- SERVICES ( EMC - RF - ENERGY EFFICIENCY - SUPPORT - EQUIPMENT AND TECHNOLOGIES  )
+	. for every thematic : great title; text and image down; let's talk with 2 cols
+
+- NEWS
+	. revoir

@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/partials/utils/variables";
+@import "./app/partials/utils/mixins";
+html,
+body {
+    height: $full;
+}
+
+body {
+    margin: 0;
+    font-family: $principal-family;
+    color: $principal-black-hexa;
+    font-size: $normal-text-size;
+    overflow-x: hidden;
+}
