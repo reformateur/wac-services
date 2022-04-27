@@ -6,8 +6,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" routerLink="/home"> HOME </a>
-                <a class="nav-link" routerLink="/latest-work"> LATEST WORK </a>
+                <a class="a nav-link" routerLink="/home"> HOME </a>
+                <a class="a nav-link" routerLink="/latest-work"> LATEST WORK </a>
                 <a class="nav-link services-drop">
                   SERVICES
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -21,12 +21,12 @@
                       <p routerLink="/service-Equipment-and-Technologies"> Equipement & <br> Technologies </p>
                   </div>
                 </a>
-                <a class="nav-link" routerLink="/about-us"> ABOUT US </a>
-                <a class="nav-link" routerLink="/news"> NEWS </a>
+                <a class="a nav-link" routerLink="/about-us"> ABOUT US </a>
+                <a class="a nav-link" routerLink="/news"> NEWS </a>
             </div>
         </div>
         <a class="navbar-brand">
-            <p class="number"> ( +225 ) 070 429 4197 </p>
+            <p class="number"> <button routerLink="/get-in-touch"> GET IN TOUCH </button> </p>
             <p class="menu-icon"> Menu </p>
             <p class="menu-icon menu-icon-close"> Close </p>
         </a>
@@ -72,96 +72,79 @@
 <!-- PRINCIPAL CONTAINER -->
 <div class="container container-bloc">
     <div class="row">
-        <div class="col-lg-6 div">
-            <div class="bloc bloc-one">
-                <div>
-                    <h1> About us </h1>
-                </div>
-                <div>
-                    <p>
-                        WAC Services is a global compliance consulting, services provider company focusing in assisting manufacturers, consultants, and laboratory all around the world to meet international regulations by achieving global market access. <br><br>
-                    </p>
-                </div>
 
-                <div>
-                    <h4> Globally recognized </h4>
-                </div>
-                <div>
-                    <p>
-                        An internationally recognized, and respected player with team experience. <br><br>
-                    </p>
-                </div>
-
-                <div>
-                    <h4> Technical approval expertise </h4>
-                </div>
-                <div>
-                    <p>
-                        Competent team of dedicated experts with many years of technical approval expertise. <br><br>
-                    </p>
-                </div>
-
-                <div>
-                    <h4> Worldwide network </h4>
-                </div>
-                <div>
-                    <p>
-                        We offer a global network of long-standing partnerships and a bilingual staff, helping customers to get their products ready for business virtually anywhere in the world <br><br>
-                    </p>
-                </div>
-
-                <div>
-                    <h4> Regulatory and approvals database : </h4>
-                </div>
-                <div>
-                    <p>
-                        Customer-oriented and fully functional regulatory and approvals database regarding to our dynamic and close relationships with in-country local agencies such as local tests laboratories, approval bodies, authorities and local engineers among others, helping
-                        us to speed up the certification process, different products and countries, including national requirements, policies and technical regulations. <br><br> • Adapted solutions – Based on research of regulatory
-                        requirements, certification requisites and schemes for your product within your target country lists. <br><br> • Interface with all regulators – Interface with governmental organizations and certification bodies on behalf of clients
-                        lacking local representation. WAC Services often works with manufacturers where their products may not fit into the defined technical regulations. We take the concerns to the regulatory body and explain the case for approval based
-                        on the lack of standards. Our amazing relationships with the key regulators allow us the ability to discuss problems and help get the outcomes the manufacturer is looking for. <br><br> • Testing matter – WAC Services coordinates
-                        all product testing for a single or family of products in accordance with required test standards for each country that requires testing within their country <br><br> • Getting competitive edge– WAC Services expertise and knowledge,
-                        we can provide research to support the best decision-making process for our clients.
-                    </p>
-                </div>
+        <div class="col-lg-6 bloc bloc-one">
+            <div>
+                <h1> About us </h1>
+            </div>
+            <div>
+                <p>
+                    WAC Services is a global compliance consulting, services provider company focusing in assisting manufacturers, consultants, and laboratory all around the world to meet international regulations by achieving global market access. <br><br>
+                </p>
             </div>
 
+            <div>
+                <h4> Globally recognized </h4>
+            </div>
+            <div>
+                <p>
+                    An internationally recognized, and respected player with team experience. <br><br>
+                </p>
+            </div>
 
+            <div>
+                <h4> Technical approval expertise </h4>
+            </div>
+            <div>
+                <p>
+                    Competent team of dedicated experts with many years of technical approval expertise. <br><br>
+                </p>
+            </div>
+
+            <div>
+                <h4> Worldwide network </h4>
+            </div>
+            <div>
+                <p>
+                    We offer a global network of long-standing partnerships and a bilingual staff, helping customers to get their products ready for business virtually anywhere in the world <br><br>
+                </p>
+            </div>
+
+            <div>
+                <table style="width:100%">
+                    <tr>
+                        <th style="width:50%">What we do ?</th>
+                        <th style="width:50%">Services</th>
+                    </tr>
+                    <tr>
+                        <td>There are over 35,000 consultants in the world., but there’s only one Wac-Services. We pride ourselves on delivering, complete approval experiences that make an impact in manufacturers's process to access the global market. We’ve
+                            proudly partnered with Manufacturers, Accreditation Bodies, Laboratories, and worldwide Vendors, technologies.
+                        </td>
+                        <td>o EMC <br> o RF <br> o Electrical safety <br> o Support
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>What We Believe:</td>
+                        <td> <button routerLink="/latest-work"> Latest work </button> </td>
+                    </tr>
+                    <tr>
+                        <td>We believe that creating memorable experiences are the best way to connect with our consumers.</td>
+                        <td> <button routerLink="/get-in-touch"> Get in touch </button> </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div class="col-lg-6 div div-2">
+        <div class="col-lg-6 bloc-two">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="AB1"></div>
+                <div class="col-6">
+                    <div class="AB1"> <img src="../../assets/images/ab1.jpeg" width="100%" height="250" alt="image"> </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="AB2"></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="AB3"></div>
+                <div class="col-6">
+                    <div class="AB2"> <img src="../../assets/images/ab2.jpeg" width="100%" height="250" alt="image"> </div>
                 </div>
                 <div class="col-12">
-                    <table style="width:100%">
-                        <tr>
-                            <th>What we do ?</th>
-                            <th>Services</th>
-                        </tr>
-                        <tr>
-                            <td>There are over 35,000 consultants in the world., but there’s only one Wac-Services. We pride ourselves on delivering, complete approval experiences that make an impact in manufacturers's process to access the global market.
-                                We’ve proudly partnered with Manufacturers, Accreditation Bodies, Laboratories, and worldwide Vendors, technologies.
-                            </td>
-                            <td>o EMC <br> o RF <br> o Electrical safety <br> o Support
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>What We Believe:</td>
-                            <td>Latest work(bouton)</td>
-                        </tr>
-                        <tr>
-                            <td>We believe that creating memorable experiences are the best way to connect with our consumers.</td>
-                            <td>Get in touch (bouton)</td>
-                        </tr>
-                    </table>
+                    <div class="AB3"> <img src="../../assets/images/ab3.jpeg" width="100%" height="250" alt="image"> </div>
                 </div>
             </div>
         </div>

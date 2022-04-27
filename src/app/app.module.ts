@@ -18,13 +18,17 @@ import { ServiceRFComponent } from './services/service-rf/service-rf.component';
 import { ServiceEquipementAndTechnologiesComponent } from './services/service-equipement-and-technologies/service-equipement-and-technologies.component';
 import { ServiceSupportComponent } from './services/service-support/service-support.component';
 import { ServiceEnergyEfficiencyComponent } from './services/service-energy-efficiency/service-energy-efficiency.component';
+import { GetinTouchComponent } from './getin-touch/getin-touch.component';
+import { OneNewComponent } from './one-new/one-new.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'get-in-touch', component: GetinTouchComponent },
   { path: 'latest-work', component: LatestWorkComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'one-new', component: OneNewComponent },
   { path: 'quick-process-time', component: ArticleOneComponent },
   { path: 'good-customers-relationship', component: ArticleTwoComponent },
   { path: 'comptetitive-costs', component: ArticleThreeComponent },
@@ -54,7 +58,9 @@ const appRoutes: Routes = [
     ServiceRFComponent,
     ServiceEquipementAndTechnologiesComponent,
     ServiceSupportComponent,
-    ServiceEnergyEfficiencyComponent
+    ServiceEnergyEfficiencyComponent,
+    GetinTouchComponent,
+    OneNewComponent
   ],
   imports: [
     BrowserModule,

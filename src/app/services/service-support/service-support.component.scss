@@ -14,7 +14,8 @@ a {
     z-index: 35;
     .d-flex {
         img {
-            height: 100px;
+            margin-top: 13px;
+            height: 135px;
             cursor: pointer
         }
     }
@@ -24,10 +25,26 @@ a {
             margin-right: 50px;
             z-index: 20;
         }
+        .a:hover,
+        .a:focus {
+            color: $principal-orange-hexa
+        }
     }
     .navbar-brand {
         font-size: $normal-text-size;
         margin-top: 10px;
+        button {
+            background: $principal-black-hexa;
+            padding: 10px;
+            padding-right: 40px;
+            padding-left: 40px;
+            color: white;
+            border: none;
+            &:hover {
+                background: $principal-orange-hexa;
+                color: $principal-black-hexa;
+            }
+        }
         .menu-icon,
         .menu-icon-close {
             display: none;
@@ -41,7 +58,7 @@ a {
         background: $principal-orange-hexa;
     }
     .services-dropdown {
-        width: inherit;
+        width: 155px;
         height: auto;
         position: absolute;
         text-align: center;
@@ -51,6 +68,7 @@ a {
         display: none;
         background: $principal-orange-hexa;
         p {
+            font-size: 0.9rem;
             &:hover {
                 font-weight: bold;
             }
@@ -148,6 +166,48 @@ a {
     }
 }
 
+.letsTalk {
+    height: 220px;
+    padding-top: 55px;
+    background: $principal-orange-hexa;
+    text-align: center;
+    margin-top: 130vh;
+    p {
+        font-weight: 200;
+        font-size: $description-text-size;
+    }
+    h1 {
+        font-size: $great-title-size;
+    }
+}
+
+.copyright {
+    height: 300px;
+    color: white;
+    padding-top: 15px;
+    background-color: $principal-black-hexa;
+    .row {
+        height: $full;
+        width: $full;
+        @include centered-bloc;
+        .blc {
+            @include centered-bloc;
+            .row {
+                @include centered-bloc;
+                h1 {
+                    color: $principal-orange-hexa
+                }
+                p {
+                    line-height: 35px;
+                }
+            }
+        }
+        .right {
+            text-align: left;
+        }
+    }
+}
+
 
 /*/
   FULL RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN
@@ -178,6 +238,7 @@ a {
     .bloc {
         padding: 0;
         margin-top: 10vh;
+        width: 90%;
         h1 {
             font-size: 3rem;
         }
@@ -186,7 +247,8 @@ a {
         }
     }
     .bloc-two {
-        padding-bottom: 10vh;
+        padding-bottom: 0;
+        margin-top: 10vh;
     }
 }
 
@@ -194,6 +256,10 @@ a {
     //
     .bloc {
         padding: 10vh;
+    }
+    .bloc-two {
+        padding: 0;
+        margin-top: -10vh;
     }
 }
 
@@ -237,9 +303,34 @@ a {
         }
     }
     .bloc-two {
+        margin-top: 0;
         .row {
             div {
                 margin-bottom: 5vh;
+            }
+        }
+    }
+    .letsTalk {
+        margin-top: 215vh;
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .copyright {
+        height: 400px;
+        .row {
+            .blc {
+                .row {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
             }
         }
     }

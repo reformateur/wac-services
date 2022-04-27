@@ -14,7 +14,8 @@ a {
     z-index: 35;
     .d-flex {
         img {
-            height: 100px;
+            margin-top: 13px;
+            height: 135px;
             cursor: pointer
         }
     }
@@ -24,10 +25,28 @@ a {
             margin-right: 50px;
             z-index: 20;
         }
+        .a:hover {
+            color: $principal-orange-hexa
+        }
+        .a:focus {
+            color: $principal-black-hexa
+        }
     }
     .navbar-brand {
         font-size: $normal-text-size;
         margin-top: 10px;
+        button {
+            background: $principal-black-hexa;
+            padding: 10px;
+            padding-right: 40px;
+            padding-left: 40px;
+            color: white;
+            border: none;
+            &:hover {
+                background: $principal-orange-hexa;
+                color: $principal-black-hexa;
+            }
+        }
         .menu-icon,
         .menu-icon-close {
             display: none;
@@ -41,7 +60,7 @@ a {
         background: $principal-orange-hexa;
     }
     .services-dropdown {
-        width: inherit;
+        width: 155px;
         height: auto;
         position: absolute;
         text-align: center;
@@ -51,6 +70,7 @@ a {
         display: none;
         background: $principal-orange-hexa;
         p {
+            font-size: 0.9rem;
             &:hover {
                 font-weight: bold;
             }
@@ -100,8 +120,6 @@ a {
         padding: 0;
         margin: 0;
         .div {
-            margin-top: 10vh;
-            padding: 4vh;
             z-index: 10;
         }
     }
@@ -109,6 +127,7 @@ a {
 
 //
 .bloc {
+    margin-top: 15vh;
     h1 {
         font-size: $great-title-size;
         font-weight: 700;
@@ -118,50 +137,49 @@ a {
         margin-top: 1vh;
         font-size: $description-text-size;
     }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    td {
+        padding: 10px;
+        button {
+            background: $principal-black-hexa;
+            color: white;
+            padding: 10px;
+            border: none;
+            &:hover {
+                background: $principal-orange-hexa;
+                color: $principal-black-hexa;
+            }
+        }
+    }
+    th {
+        background-color: $principal-orange-hexa;
+        text-align: center;
+        padding: 10px;
+    }
 }
 
-.div-2 {
-    height: auto;
+.bloc-two {
+    height: 400px;
+    margin-top: 15vh;
     .row {
-        height: auto;
-        div {
-            height: 400px;
-            .AB1 {
-                background: url('../../assets/images/ab1.jpeg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: $full;
-            }
-            .AB2 {
-                background: url('../../assets/images/ab2.jpeg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                margin-top: -5vh;
-            }
-            .AB3 {
-                background: url('../../assets/images/ab3.jpeg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                margin-top: -5vh;
-            }
-            table,
-            th,
-            td {
-                border: 1px solid black;
-            }
-            table {
-                margin-top: -25vh;
-            }
+        height: $full;
+        @include centered-bloc;
+        .col-12 {
+            margin-top: 2.5vh;
         }
     }
 }
 
 .letsTalk {
-    height: 250px;
-    padding-top: 75px;
+    height: 220px;
+    padding-top: 55px;
     background: $principal-orange-hexa;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 25vh;
     p {
         font-weight: 200;
         font-size: $description-text-size;
@@ -172,8 +190,9 @@ a {
 }
 
 .copyright {
-    height: 350px;
+    height: 300px;
     color: white;
+    padding-top: 15px;
     background-color: $principal-black-hexa;
     .row {
         height: $full;
@@ -234,7 +253,6 @@ a {
         }
     }
     .letsTalk {
-        margin-top: 20vh;
         p {
             font-size: 1.1rem;
         }
@@ -244,12 +262,7 @@ a {
     }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1300px) {
-    //
-    .bloc {
-        padding: 10vh;
-    }
-}
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {}
 
 
 /*/
@@ -297,23 +310,19 @@ a {
             font-size: 1.1rem;
         }
     }
-    .div-2 {
+    .bloc-two {
+        height: 400px;
+        margin-top: 10vh;
         .row {
-            div {
-                .AB2 {
-                    margin-top: -5vh;
-                }
-                .AB3 {
-                    margin-top: -4vh;
-                }
-                table {
-                    margin-top: 0vh;
-                }
+            height: $full;
+            @include centered-bloc;
+            .col-12 {
+                margin-top: 2.5vh;
             }
         }
     }
     .letsTalk {
-        margin-top: 10vh;
+        margin-top: 30vh;
         p {
             font-size: 1.1rem;
         }

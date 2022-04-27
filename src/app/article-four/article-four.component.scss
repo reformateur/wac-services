@@ -14,7 +14,8 @@ a {
     z-index: 35;
     .d-flex {
         img {
-            height: 100px;
+            margin-top: 13px;
+            height: 135px;
             cursor: pointer
         }
     }
@@ -24,10 +25,28 @@ a {
             margin-right: 50px;
             z-index: 20;
         }
+        .a:hover {
+            color: $principal-orange-hexa;
+        }
+        .a:focus {
+            color: $principal-black-hexa;
+        }
     }
     .navbar-brand {
         font-size: $normal-text-size;
         margin-top: 10px;
+        button {
+            background: $principal-black-hexa;
+            padding: 10px;
+            padding-right: 40px;
+            padding-left: 40px;
+            border: none;
+            color: white;
+            &:hover {
+                background: $principal-orange-hexa;
+                color: $principal-black-hexa;
+            }
+        }
         .menu-icon,
         .menu-icon-close {
             display: none;
@@ -41,7 +60,7 @@ a {
         background: $principal-orange-hexa;
     }
     .services-dropdown {
-        width: inherit;
+        width: 155px;
         height: auto;
         position: absolute;
         text-align: center;
@@ -51,6 +70,7 @@ a {
         display: none;
         background: $principal-orange-hexa;
         p {
+            font-size: 0.9rem;
             &:hover {
                 font-weight: bold;
             }
@@ -125,11 +145,11 @@ a {
 }
 
 .letsTalk {
-    height: 250px;
-    padding-top: 75px;
+    height: 220px;
+    padding-top: 55px;
     background: $principal-orange-hexa;
     text-align: center;
-    margin-top: 60vh;
+    margin-top: 35vh;
     p {
         font-weight: 200;
         font-size: $description-text-size;
@@ -140,8 +160,9 @@ a {
 }
 
 .copyright {
-    height: 350px;
+    height: 300px;
     color: white;
+    padding-top: 15px;
     background-color: $principal-black-hexa;
     .row {
         height: $full;
