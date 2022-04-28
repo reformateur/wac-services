@@ -102,7 +102,7 @@ a {
             }
         }
         .hide-mobile-dropdown {
-            top: 15vh;
+            top: 20vh;
             cursor: pointer;
             display: none;
         }
@@ -114,8 +114,6 @@ a {
 
 //
 .container-bloc {
-    height: $full;
-    width: $full;
     .row {
         width: $full;
         height: $full;
@@ -149,7 +147,7 @@ a {
     padding-top: 55px;
     background: $principal-orange-hexa;
     text-align: center;
-    margin-top: 25vh;
+    margin-top: 10vh;
     p {
         font-weight: 200;
         font-size: $description-text-size;
@@ -160,9 +158,9 @@ a {
 }
 
 .copyright {
-    height: 300px;
+    height: auto;
     color: white;
-    padding-top: 15px;
+    padding: 20px;
     background-color: $principal-black-hexa;
     .row {
         height: $full;
@@ -224,7 +222,6 @@ a {
         }
     }
     .letsTalk {
-        margin-top: 30vh;
         p {
             font-size: 1.1rem;
         }
@@ -281,7 +278,6 @@ a {
         }
     }
     .letsTalk {
-        margin-top: 15vh;
         p {
             font-size: 1.1rem;
         }
@@ -290,7 +286,6 @@ a {
         }
     }
     .copyright {
-        height: 400px;
         .row {
             .blc {
                 .row {

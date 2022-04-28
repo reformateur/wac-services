@@ -102,7 +102,7 @@ a {
             }
         }
         .hide-mobile-dropdown {
-            top: 15vh;
+            top: 20vh;
             cursor: pointer;
             display: none;
         }
@@ -170,6 +170,48 @@ a {
     }
 }
 
+.letsTalk {
+    height: 220px;
+    padding-top: 55px;
+    background: $principal-orange-hexa;
+    text-align: center;
+    margin-top: 10vh;
+    p {
+        font-weight: 200;
+        font-size: $description-text-size;
+    }
+    h1 {
+        font-size: $great-title-size;
+    }
+}
+
+.copyright {
+    height: auto;
+    color: white;
+    padding: 25px;
+    background-color: $principal-black-hexa;
+    .row {
+        height: $full;
+        width: $full;
+        @include centered-bloc;
+        .blc {
+            @include centered-bloc;
+            .row {
+                @include centered-bloc;
+                h1 {
+                    color: $principal-orange-hexa
+                }
+                p {
+                    line-height: 35px;
+                }
+            }
+        }
+        .right {
+            text-align: left;
+        }
+    }
+}
+
 
 /*/
   FULL RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN
@@ -198,6 +240,14 @@ a {
     }
     .container-bloc {
         width: 90%;
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
     }
 }
 
@@ -233,6 +283,28 @@ a {
     }
     .container-bloc {
         width: 96%;
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .copyright {
+        .row {
+            .blc {
+                .row {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
     }
 }
 

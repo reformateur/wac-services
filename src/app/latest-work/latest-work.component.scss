@@ -102,7 +102,7 @@ a {
             }
         }
         .hide-mobile-dropdown {
-            top: 15vh;
+            top: 20vh;
             cursor: pointer;
             display: none;
         }
@@ -207,9 +207,9 @@ a {
 }
 
 .copyright {
-    height: 300px;
+    height: auto;
     color: white;
-    padding-top: 15px;
+    padding: 20px;
     background-color: $principal-black-hexa;
     .row {
         height: $full;
@@ -375,7 +375,6 @@ a {
         }
     }
     .copyright {
-        height: 400px;
         .row {
             .blc {
                 .row {

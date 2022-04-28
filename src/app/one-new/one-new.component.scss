@@ -102,7 +102,7 @@ a {
             }
         }
         .hide-mobile-dropdown {
-            top: 15vh;
+            top: 20vh;
             cursor: pointer;
             display: none;
         }
@@ -114,8 +114,6 @@ a {
 
 //
 .container-bloc {
-    height: $full;
-    width: $full;
     .row {
         width: $full;
         height: $full;
@@ -129,7 +127,7 @@ a {
 .bloc {
     width: 80%;
     padding: 10vh;
-    padding-top: 0;
+    padding-top: 20vh;
     h1 {
         font-weight: 500;
         text-align: center;
@@ -147,6 +145,48 @@ a {
         text-align: center;
         margin-top: 0;
         margin-bottom: 3vh;
+    }
+}
+
+.letsTalk {
+    height: 220px;
+    padding-top: 55px;
+    background: $principal-orange-hexa;
+    text-align: center;
+    margin-top: 10vh;
+    p {
+        font-weight: 200;
+        font-size: $description-text-size;
+    }
+    h1 {
+        font-size: $great-title-size;
+    }
+}
+
+.copyright {
+    height: auto;
+    color: white;
+    padding: 25px;
+    background-color: $principal-black-hexa;
+    .row {
+        height: $full;
+        width: $full;
+        @include centered-bloc;
+        .blc {
+            @include centered-bloc;
+            .row {
+                @include centered-bloc;
+                h1 {
+                    color: $principal-orange-hexa
+                }
+                p {
+                    line-height: 35px;
+                }
+            }
+        }
+        .right {
+            text-align: left;
+        }
     }
 }
 
@@ -186,6 +226,14 @@ a {
         }
         p {
             font-size: 1.1rem;
+        }
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
         }
     }
 }
@@ -235,6 +283,28 @@ a {
         }
         p {
             font-size: 1.1rem;
+        }
+    }
+    .letsTalk {
+        p {
+            font-size: 1.1rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .copyright {
+        .row {
+            .blc {
+                .row {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
         }
     }
 }
