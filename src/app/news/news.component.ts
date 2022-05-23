@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../models/ArticleModel';
+import { NewsService } from '../services/news.service';
+import {formatDate} from '@angular/common';
 declare var $: any;
 
 @Component({
@@ -8,7 +12,11 @@ declare var $: any;
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  Articles:Article[]=[];
+  searchQuery:string='';
+  found:boolean= true;
+
+  constructor( private http: HttpClient,private blogService:NewsService) { }
 
   ngOnInit(): void {
     //NAVAR SERVICE ITEM DROPDOWN CODE
@@ -47,6 +55,58 @@ export class NewsComponent implements OnInit {
         $('.menu-icon').css("display","block");
         $('.menu-icon-close').css("display","none");
     });
+
+    this.getArticles()
+  }
+
+  getArticles():void {
+    this.blogService.getAllArticles()
+    .subscribe((res)=>{
+      res.forEach(el=>{
+        if (this.Articles.length < 4) {
+          this.Articles.push({
+            "title":el.title,
+            "content":el.content,
+            "concerning":el.concerning,
+            'id':el.id,
+            "created_at":formatDate(el.created_at,'dd/MM/yyyy',"en")
+          })
+        }
+       
+      })
+      
+    })
+  }
+  search(value: string):void {
+    this.searchQuery=value 
+    if (this.searchQuery !== '') {
+      this.Articles=[]
+      this.blogService.getAllArticles().subscribe((response)=>{
+        response.map(el=>{
+          if (el.title.includes(this.searchQuery) == true || 
+              el.content.includes(this.searchQuery) == true || 
+              el.concerning.includes(this.searchQuery) == true ) {
+            this.found = true
+            console.log('trouvé')
+            console.debug(el)
+            if (this.Articles.length < 4 ) {
+              this.Articles.push({
+                "title":el.title,
+                "content":el.content,
+                "concerning":el.concerning,
+                'id':el.id,
+                "created_at":formatDate(el.created_at,'dd/MM/yyyy',"en")
+              })
+            }
+            
+          } else {
+            this.found = false
+            console.log('pas trouvé')
+          }
+        })
+      })
+      
+    }
   }
 
 }

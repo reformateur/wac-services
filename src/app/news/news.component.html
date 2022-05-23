@@ -75,83 +75,30 @@
         <!-- SEARCHBAR -->
         <form>
             <div class="form-group">
-                <input type="search" class="form-control" id="name" placeholder="Search By Date | By Country | By Title">
+                <input type="search" #searchQuery class="form-control" id="name" placeholder="Search By Date | By Country | By Title"
+                (keyup)="search(searchQuery.value)">
             </div>
         </form>
+        <p *ngIf="!found">pas d'articles trouvé !</p>
         <!-- BLOC DES EVENEMENTS -->
         <div class="bloc">
             <div class="row">
-                <!-- BLOC DE 2 EVENEMENTS -->
-                <div class="col-lg-12 container-news">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="new">
-                                <p class="date"> 25 january 2022 </p>
-                                <h6 class="new-title"> Burkina Faso ARCEP Resumes Activities </h6> <br>
-                                <p class="details">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                    content here', making it look like readable English. <br><br>
-                                    <span routerLink="/one-new"> Read more
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                      </svg>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="new">
-                                <p class="date"> 19 January 2022 </p>
-                                <h6 class="new-title"> South Africa ICASA Amends RF Spectrum Regulations </h6> <br>
-                                <p class="details">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                    content here', making it look like readable English. <br><br>
-                                    <span routerLink="/one-new"> Read more
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                      </svg>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
+                <div *ngFor="let article of Articles"  class="col-6">
+                    <div class="new">
+                        <p class="date"> {{ article.created_at}} </p>
+                        <h6 class="new-title"> {{ article.title }} </h6> <br>
+                        <p class="details">
+                            {{ article.content }} <br><br>
+                            <span routerLink="/one-new/{{ article.id}}"> Read more
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                              </svg>
+                            </span>
+                        </p>
                     </div>
                 </div>
 
-                <!-- BLOC DE 2 EVENEMENTS -->
-                <div class="col-lg-12 container-news">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="new">
-                                <p class="date"> 28 December 2021 </p>
-                                <h6 class="new-title"> Guinea ARPT Appoint New Managing Director </h6> <br>
-                                <p class="details">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                    content here', making it look like readable English. <br><br>
-                                    <span routerLink="/one-new"> Read more
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                      </svg>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="new">
-                                <p class="date"> 30 November 2022 </p>
-                                <h6 class="new-title"> Tanzania TCRA Publishes Minimum Technical Specifications for IoT Devices </h6> <br>
-                                <p class="details">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                    content here', making it look like readable English. <br><br>
-                                    <span routerLink="/one-new"> Read more
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                      </svg>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- IMAGE CARTE DU MONDE -->
                 <div>

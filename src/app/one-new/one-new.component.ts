@@ -1,4 +1,8 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Article } from '../models/ArticleModel';
+import { NewsService } from '../services/news.service';
 declare var $: any;
 
 @Component({
@@ -8,7 +12,8 @@ declare var $: any;
 })
 export class OneNewComponent implements OnInit {
 
-  constructor() { }
+  article: any={}
+  constructor( private activatedRoute: ActivatedRoute,private blogService:NewsService) { }
 
   ngOnInit(): void {
     //NAVAR SERVICE ITEM DROPDOWN CODE
@@ -47,6 +52,17 @@ export class OneNewComponent implements OnInit {
         $('.menu-icon').css("display","block");
         $('.menu-icon-close').css("display","none");
     });
+
+
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+        this.blogService.getArticle(id)
+      .subscribe((res)=>{
+          this.article = res
+        
+      })
+    })
+
   }
 
 }

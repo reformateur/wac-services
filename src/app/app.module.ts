@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule,ReactiveFormsModule  } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +30,7 @@ const appRoutes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'one-new', component: OneNewComponent },
+  { path: 'one-new/:id', component: OneNewComponent },
   { path: 'quick-process-time', component: ArticleOneComponent },
   { path: 'good-customers-relationship', component: ArticleTwoComponent },
   { path: 'comptetitive-costs', component: ArticleThreeComponent },
@@ -65,9 +67,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

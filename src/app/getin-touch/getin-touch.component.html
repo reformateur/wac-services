@@ -72,8 +72,13 @@
 <!-- PRINCIPAL CONTAINER -->
 <div class="container container-bloc">
     <div class="row">
-
-        <div class="col-lg-5 bloc bloc-one">
+        <div class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="sended">
+            <p>we have received your message! we will contact you for more details.</p>
+            <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+        </div>
+        <div class="col-lg-6 bloc bloc-one">
             <div>
                 <h1> Get In Touch </h1>
             </div>
@@ -85,28 +90,62 @@
                 </p>
             </div>
         </div>
-
-        <div class="col-lg-5 bloc-two">
-            <form>
+        
+        <div class="col-lg-6 bloc-two">
+            
+              
+            <form [formGroup]="form" (ngSubmit)="submitForm()">
                 <div class="div">
                     * required fields
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" 
+                        formControlName="fullname" 
+                        name="fullname" 
+                        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+                    >
+                    <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                        <div *ngIf="f['fullname'].errors['required']">Name is required</div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="company" placeholder="Company Name">
+                    <input type="text" class="form-control" id="company" placeholder="Company Name" 
+                        formControlName="comapny" 
+                        name="comapny" 
+                        [ngClass]="{ 'is-invalid': submitted && f['comapny'].errors }"
+                    >
+                    <div *ngIf="submitted && f['comapny'].errors" class="invalid-feedback">
+                        <div *ngIf="f['comapny'].errors['required']">comapny name is required</div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" 
+                        formControlName="email" 
+                        name="email" 
+                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                    >
+                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                        <div *ngIf="f['email'].errors['required']">email is required</div>
+                    </div>
+
                 </div>
                 <div class="form-group describe-group">
-                    <textarea class="form-control" id="project" rows="3" placeholder="Describe The Project"></textarea>
+                    <textarea class="form-control" id="project" rows="3" placeholder="Describe The Project"
+                        formControlName="description"
+                        name="description"
+                        [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"
+                        
+                    
+                    ></textarea>
+                    <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+                        <div *ngIf="f['description'].errors['required']">description is required</div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <input class="form-control" type="file" id="formFileMultiple" multiple>
-                </div>
-                <button type="submit" class="btn"> SUBMIT </button>
+               <!--  <div class="mb-3">
+                    <input class="form-control" type="file" id="formFileMultiple"  (change)="uploadFile($event)">
+                </div> -->
+                <button type="submit"  type="submit" class="btn"> SUBMIT </button>
+
             </form>
         </div>
     </div>
