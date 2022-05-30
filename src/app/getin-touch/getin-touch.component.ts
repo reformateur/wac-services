@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 declare var $: any;
 
 import { MailModel } from "../models/MailModel";
-import { GetinTouchService } from '../services/getin-touch.service';
+import { GetinTouchService } from '../services.services/getin-touch.service';
 
 @Component({
   selector: 'app-getin-touch',
@@ -27,11 +27,11 @@ export class GetinTouchComponent implements OnInit {
       files:[""]
     });
 
+    // if the url change
     router.events.subscribe((event: Event) => {
       
       if (event instanceof NavigationEnd) {
-          // Hide loading indicator
-          console.log(event);
+          // Hide notif indicator
           this.sended= false
       }
       
@@ -77,35 +77,28 @@ export class GetinTouchComponent implements OnInit {
     });
 
   }
-  uploadFile(event:any) {
-    const file = event.target
-   /*  this.form.patchValue({
-      files: file.name,
-    }); */
-    console.log(file);
-  }
+    /*uploadFile(event:any) {
+      const file = event.target
+      this.form.patchValue({
+        files: file.name,
+      }); 
+      console.log(file);
+    }*/
   get f(): { [key: string]: AbstractControl } {    
     return this.form.controls;
   }
+  // get in touch function , handle email sending
   submitForm() {
     this.submitted = true;
-    
-    var formData: any = new FormData();
-    console.log(this.form );
-    console.log("formdata",this.form.value );
-    
-    
     this.ContactService.sendMail(this.form.value)
       .subscribe({
         next: (response) => {
-          console.log("response",response)
-          alert("message envoyé")
           this.sended = true
           
         },
         error: (error) => {
-          console.log("errorrrr",error)
-          this.sended= false
+          console.error("error",error)
+          this.sended = false
         }
       });
   }

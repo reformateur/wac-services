@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../models/ArticleModel';
-import { NewsService } from '../services/news.service';
+import { NewsService } from '../services.services/news.service';
 import {formatDate} from '@angular/common';
 declare var $: any;
 
@@ -59,6 +59,7 @@ export class NewsComponent implements OnInit {
     this.getArticles()
   }
 
+  //get all articles function
   getArticles():void {
     this.blogService.getAllArticles()
     .subscribe((res)=>{
@@ -77,19 +78,21 @@ export class NewsComponent implements OnInit {
       
     })
   }
+  // search function 2 way binding
   search(value: string):void {
     this.searchQuery=value 
     if (this.searchQuery !== '') {
       this.Articles=[]
       this.blogService.getAllArticles().subscribe((response)=>{
         response.map(el=>{
+            // if query is in title or content or concerning
+
           if (el.title.includes(this.searchQuery) == true || 
               el.content.includes(this.searchQuery) == true || 
               el.concerning.includes(this.searchQuery) == true ) {
             this.found = true
-            console.log('trouvé')
-            console.debug(el)
-            if (this.Articles.length < 4 ) {
+                // only the 6 last articles
+            if (this.Articles.length < 6 ) {
               this.Articles.push({
                 "title":el.title,
                 "content":el.content,
@@ -101,7 +104,6 @@ export class NewsComponent implements OnInit {
             
           } else {
             this.found = false
-            console.log('pas trouvé')
           }
         })
       })

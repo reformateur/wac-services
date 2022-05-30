@@ -2,7 +2,7 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from '../models/ArticleModel';
-import { NewsService } from '../services/news.service';
+import { NewsService } from '../services.services/news.service';
 declare var $: any;
 
 @Component({
@@ -53,12 +53,12 @@ export class OneNewComponent implements OnInit {
         $('.menu-icon-close').css("display","none");
     });
 
-
+    // get one article
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
         this.blogService.getArticle(id)
       .subscribe((res)=>{
-          this.article = res
+        this.article = res
         
       })
     })
