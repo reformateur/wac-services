@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from '../models/ArticleModel';
 import { NewsService } from '../services.services/news.service';
 declare var $: any;
@@ -55,12 +55,25 @@ export class OneNewComponent implements OnInit {
 
     // get one article
     this.activatedRoute.params.subscribe(params => {
-      const id = params['id'];
+      let id:number = params['id'];
+      if (id > 0 ) {
         this.blogService.getArticle(id)
-      .subscribe((res)=>{
-        this.article = res
-        
-      })
+          .subscribe({
+            next: (response)=>{
+              this.article = {
+                "title": response.title,
+                "content": response.content,
+                "concerning": response.concerning,
+                "created_at":response.created_at
+              } 
+            },
+            error: (error)=>{
+              console.log("error : ", error);
+              
+            }
+          })
+      } 
+      
     })
 
   }

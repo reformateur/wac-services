@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../models/ArticleModel';
 import { NewsService } from '../services.services/news.service';
 import {formatDate} from '@angular/common';
+import { error } from '@angular/compiler/src/util';
 declare var $: any;
 
 @Component({
@@ -14,7 +15,7 @@ export class NewsComponent implements OnInit {
 
   Articles:Article[]=[];
   searchQuery:string='';
-  found:boolean= true;
+  isnotfound:boolean = false;
 
   constructor( private http: HttpClient,private blogService:NewsService) { }
 
@@ -62,21 +63,29 @@ export class NewsComponent implements OnInit {
   //get all articles function
   getArticles():void {
     this.blogService.getAllArticles()
-    .subscribe((res)=>{
-      res.forEach(el=>{
-        if (this.Articles.length < 4) {
-          this.Articles.push({
-            "title":el.title,
-            "content":el.content,
-            "concerning":el.concerning,
-            'id':el.id,
-            "created_at":formatDate(el.created_at,'dd/MM/yyyy',"en")
-          })
-        }
-       
-      })
-      
-    })
+    .subscribe(
+      {
+      next: (response)=>{
+        response.forEach(el=>{
+          if (this.Articles.length < 4) {
+            this.Articles.push({
+              "title":el.title,
+              "content":el.content,
+              "concerning":el.concerning,
+              'id':el.id,
+              "created_at":formatDate(el.created_at,'dd/MM/yyyy',"en")
+            })
+          }
+        
+        })
+      this.isnotfound = true 
+      },
+      error: (error)=>{
+        console.error("error",error)
+        this.isnotfound = false
+      }
+    });
+         
   }
   // search function 2 way binding
   search(value: string):void {
@@ -90,7 +99,7 @@ export class NewsComponent implements OnInit {
           if (el.title.includes(this.searchQuery) == true || 
               el.content.includes(this.searchQuery) == true || 
               el.concerning.includes(this.searchQuery) == true ) {
-            this.found = true
+            this.isnotfound = true
                 // only the 6 last articles
             if (this.Articles.length < 6 ) {
               this.Articles.push({
@@ -103,7 +112,7 @@ export class NewsComponent implements OnInit {
             }
             
           } else {
-            this.found = false
+            this.isnotfound = false
           }
         })
       })
