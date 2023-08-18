@@ -9,7 +9,7 @@ import { Article } from '../models/ArticleModel';
   providedIn: 'root'
 })
 export class NewsService {
-  baseApiUrl = "http://62.171.168.221/article";
+  baseApiUrl = "http://62.171.168.221:3333/article";
   constructor(private http: HttpClient) { }
 
   getAllArticles(): Observable<Article[]> {
