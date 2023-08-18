@@ -10,7 +10,7 @@ import { MailModel } from '../models/MailModel';
 })
 export class GetinTouchService {
 
-  baseApiUrl = "http://154.53.44.167:3333/project/add";
+  baseApiUrl = "http://62.171.168.221:3333/project/add";
 
   constructor(private http: HttpClient) { }
   httpOptions = {
